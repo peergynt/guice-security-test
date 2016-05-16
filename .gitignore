@@ -1,0 +1,32 @@
+### Java template
+*.class
+
+#store
+*.DS_Store
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# Eclipse project files
+.classpath
+.project
+.settings
+target/
+
+src/main/webapp/VAADIN/themes/gstheme/addons.scss
+src/main/webapp/VAADIN/themes/gstheme/styles.css
