@@ -37,7 +37,7 @@ import com.vaadin.ui.themes.ValoTheme;
 @GuiceUI
 public class GuiceSecurityUI extends UI {
 
-    private static final long serialVersionUID = -7357009768687504080L;
+    private static final long serialVersionUID = 8621888213266448123L;
 
     @Inject
     private AccessControl accessControl;
@@ -47,6 +47,9 @@ public class GuiceSecurityUI extends UI {
 
     @Inject
     private Button publicButton;
+
+    @Inject
+    private Button commonButton;
 
     @RestrictedVisibility(value=Names.USER_1_NAME)
     private Button user1Button;
@@ -61,6 +64,7 @@ public class GuiceSecurityUI extends UI {
     @ViewContainer
     private VerticalLayout contentLayout;
 
+    @Inject
     private Label userName;
 
     @SuppressWarnings("serial")
@@ -103,12 +107,18 @@ public class GuiceSecurityUI extends UI {
         publicButton.setPrimaryStyleName(ValoTheme.MENU_ITEM);
         publicButton.addClickListener(menuButtonClickListener);
 
+        commonButton.setCaption("Common Stuff");
+        commonButton.setData(Names.COMMON_VIEW);
+        commonButton.setPrimaryStyleName(ValoTheme.MENU_ITEM);
+        commonButton.addClickListener(menuButtonClickListener);
+
         invalidButton.setCaption("Invalid Stuff");
         invalidButton.setData("invalid");
         invalidButton.setPrimaryStyleName(ValoTheme.MENU_ITEM);
         invalidButton.addClickListener(menuButtonClickListener);
 
-        menuLayout.addComponents(user1Button, user2Button, publicButton, invalidButton);
+        menuLayout.addComponents(publicButton, commonButton, user1Button,
+                user2Button, invalidButton);
 
         contentLayout.setMargin(true);
         contentLayout.setSpacing(true);

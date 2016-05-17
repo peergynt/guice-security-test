@@ -9,6 +9,7 @@ public class Names {
 
     // View names
     public static final String ACCESS_DENIED_VIEW = "accessDenied";
+    public static final String COMMON_VIEW = "common";
     // The public view is the default view (empty name)
     public static final String PUBLIC_VIEW = "";
     public static final String USER_1_VIEW = "user1";
